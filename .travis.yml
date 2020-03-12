@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t lissenburg/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true lissenburg/docker-react npm run test
