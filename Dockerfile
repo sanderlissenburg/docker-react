@@ -13,9 +13,5 @@ RUN npm run build
 
 ## Final phase
 FROM nginx:alpine
-
+EXPOSE 80
 COPY --from=build /app/build /usr/share/nginx/html
-
-
-
-
